@@ -7,7 +7,7 @@ import {
 
 import Dashboard from "./components/Dashboard/Dashboard";
 import Login from "./components/Auth/Login";
-import Signup from "./components/Auth/SignUp";
+import Signup from "./components/Auth/Signup";
 import PrivateRoute from "./components/Auth/PrivateRoute";
 function App() {
   return (
