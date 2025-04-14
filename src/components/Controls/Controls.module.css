@@ -1,0 +1,17 @@
+.controlsContainer {
+  margin-bottom: 1rem;
+}
+
+.controlButton {
+  margin: 0 5px 5px 0;
+  padding: 8px 12px;
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.controlButton:hover {
+  background: #555;
+}
