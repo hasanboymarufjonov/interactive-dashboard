@@ -1,17 +1,122 @@
+:root {
+  --popover-bg: #2d2d2d;
+  --popover-border: #555555;
+  --text-primary: #e1e1e1;
+  --text-secondary: #aaaaaa;
+  --accent-color: #007bff;
+  --accent-hover-color: #0056b3;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --focus-ring-color: rgba(0, 123, 255, 0.5);
+  --option-hover-bg: rgba(255, 255, 255, 0.1);
+  --option-active-bg: rgba(255, 255, 255, 0.15);
+}
+
 .controlsContainer {
-  margin-bottom: 1rem;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 50;
 }
 
-.controlButton {
-  margin: 0 5px 5px 0;
-  padding: 8px 12px;
-  background: #444;
+.addBlockButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  padding: 0;
+  background-color: var(--accent-color);
   color: white;
-  border: 1px solid #666;
-  border-radius: 4px;
+  border: none;
+  box-shadow: 0 4px 10px var(--shadow-color);
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.addBlockButton:hover {
+  background-color: var(--accent-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+.addBlockButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--focus-ring-color);
+}
+.addBlockButton:active {
+  transform: translateY(0px);
+  background-color: var(--accent-hover-color);
+  box-shadow: 0 4px 10px var(--shadow-color);
 }
 
-.controlButton:hover {
-  background: #555;
+.optionsMenu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: var(--popover-bg);
+  border: 1px solid var(--popover-border);
+  border-radius: 6px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  z-index: 10;
+  margin-bottom: 8px;
+  padding: 8px 0;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInScaleUp 0.2s ease-out;
+  transform-origin: bottom right;
+}
+
+.optionButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 10px 15px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-radius: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.optionButton:hover {
+  background-color: var(--option-hover-bg);
+  color: #ffffff;
+}
+
+.optionButton:focus-visible {
+  outline: none;
+  background-color: var(--option-hover-bg);
+  box-shadow: inset 3px 0 0 0 var(--accent-color);
+}
+
+.optionButton:active {
+  background-color: var(--option-active-bg);
+}
+
+.optionIcon {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.optionButton:hover .optionIcon {
+  color: var(--text-primary);
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }

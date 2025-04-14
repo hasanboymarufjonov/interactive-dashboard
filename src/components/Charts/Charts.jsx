@@ -16,7 +16,6 @@ import {
 
 const Charts = ({ type, data }) => {
   const chartData = Array.isArray(data) ? data : [];
-  console.log("Data:" + data);
   return (
     <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
       <ResponsiveContainer width="100%" height="100%">
